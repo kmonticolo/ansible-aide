@@ -35,7 +35,7 @@
     dest: "{{ aide_conf_path }}"
     validate: "{{ aide_path.stdout }} -D -c %s"
 
-#Setup crontab
+# Setup crontab
 - name: Ensure aide check is setup in crontab - No Email Report
   cron:
     name: "{{ aide_cronjob_name }}"
@@ -70,7 +70,7 @@
     - aide_cron_email_notify|bool
     - aide_cron_schedule_check|bool
 
-#Remove old cron jobs when aide_cron_schedule_check has been changed to False
+# Remove old cron jobs when aide_cron_schedule_check has been changed to False
 - name: Ensure aide check is removed in crontab - No Email Report
   cron:
     name: "{{ aide_cronjob_name }}"
