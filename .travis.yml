@@ -28,7 +28,7 @@ script:
   - yamllint tasks/main.yml
   # Basic role syntax check
   - ansible-playbook tests/test.yml -i tests/inventory --syntax-check
-  - ansible-playbook tests/test.yml -i tests/inventory --connection=local
+  - ansible-playbook tests/test.yml -b -i tests/inventory --connection=local
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
