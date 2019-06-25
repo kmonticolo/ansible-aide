@@ -39,7 +39,7 @@
 - name: Ensure aide check is setup in crontab - No Email Report
   cron:
     name: "{{ aide_cronjob_name }}"
-    backup: yes
+    backup: true
     user: root
     state: present
     minute: "{{ aide_cron_sched_min }}"
@@ -55,7 +55,7 @@
 - name: Ensure aide check is setup in crontab - With Email Report
   cron:
     name: "{{ aide_cronjob_name }}"
-    backup: yes
+    backup: true
     user: root
     state: present
     minute: "{{ aide_cron_sched_min }}"
